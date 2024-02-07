@@ -1,13 +1,18 @@
-var prompt = require('prompt-sync')();
+
+const button = document.getElementById('calcular')
+
+button.addEventListener('click', function() {
+    
+    imc()
+    alert("O seu IMC é: " + imc())
+})
 
 
 
-let peso = prompt("Insira seu peso: ")
-let altura = prompt("Insira sua altura: ")
+const imc=()=>{
+    let peso = parseFloat(document.getElementById('peso').value)
+    let altura = parseFloat(document.getElementById('altura').value)
+    let imc2 = peso/(altura**2)
 
-function imc(peso,altura){
-    imc = peso/(altura**2)
-    return `O seu IMC é: ${imc}.`
+    return imc2
 }
-
-console.log(imc(peso,altura))
